@@ -10,45 +10,41 @@ int main() {
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
-    char linha[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-    int coluna[10] = {1, 2, 3, 4, 5, 6 , 7, 8, 9, 10};
+    char tabuleiro[10][10];
 
-    int tabuleiro[10][10] = {
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,}
-    };
-
-    printf(" TABULEIRO BATALHA NAVAL \n\n");
-    printf("  ");
-
-    for (int j = 0; j < 10; j++)
+    //Inicializa tabuleiro com água
+    for (int i = 0; i < 10; i++)
     {
-        printf(" %c", linha[j]);
+        for (int j = 0; j < 10; j++)
+        {
+            tabuleiro[i][j] = 0;
+        }
     }
 
-    for (int j = 0; j < 10; j++)
-    {
-        printf("\n%d ", coluna[j]);
-    }
-   
+    // Posiciona o primeiro navio (vertical - 3)
+    tabuleiro[1][2] = 3; //parte 1 do navio
+    tabuleiro[2][2] = 3; //parte 2 do navio
+    tabuleiro[3][2] = 3; //parte 3 do navio
 
+    printf("Navio vertical: \n");
+    printf("Coordenada: (1, 2)\n");
+     printf("Coordenada: (2, 2)\n");
+    printf("Coordenada: (3, 2)\n");
+    printf("\n");
+
+    // Posiciona o segundo navio (horizontal - 2)
+    tabuleiro[0][4] = 3; //parte 1 do navio
+    tabuleiro[0][5] = 3; //parte 2 do navio
 
     for (int i = 0; i < 10; i++)
     {
         for (int j = 0; j < 10; j++)
         {
-            printf(" %d", tabuleiro[i][j]);
+            printf("%d ", tabuleiro[i][j]);
         }
-       printf("\n");
+        printf("\n");
     }
+
 
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
